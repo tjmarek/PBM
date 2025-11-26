@@ -1,0 +1,461 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBM Elite Basketball Training | Elevate Your Game</title>
+
+    <!-- Tailwind config MUST come before Tailwind CDN -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#31A9F4',
+                        'dark-black': '#0C101A',
+                        'accent-gold': '#FFD700',
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom styles for background and font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        /* Define CSS variables */
+        :root {
+            --primary-blue: #31A9F4; /* Light Blue */
+            --dark-black: #0C101A;   /* DEEP NAVY/BLACK */
+            --accent-gold: #FFD700;  /* Gold/Yellow for high contrast */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #E5E7EB; /* Light text for dark background */
+            background-color: var(--dark-black);
+        }
+
+        /* Solid sticky header */
+        .solid-sticky-header {
+            background-color: var(--dark-black) !important;
+            opacity: 1 !important;
+        }
+
+        /* Angular background for the service cards */
+        .service-card-bg {
+            background: linear-gradient(145deg, #1e293b, #0C101A); 
+            border-bottom: 4px solid var(--primary-blue); 
+        }
+    </style>
+</head>
+
+<body class="antialiased text-gray-100">
+
+    <!-- Header & Navigation -->
+    <header class="solid-sticky-header shadow-2xl sticky top-0 z-[999] border-b border-primary-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Increased height from h-20 to h-24 for larger logo area -->
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <a href="#" class="flex items-center">
+                    <img 
+                        src="https://woocommerce-1364451-5958603.cloudwaysapps.com/wp-content/uploads/2025/11/imageedit_1_9796215862-1.png"
+                        alt="PBM Elite Logo"
+                        class="h-16 w-auto"
+                    >
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden sm:flex space-x-10 text-lg font-semibold">
+                    <a href="#booking-widget" class="text-gray-300 hover:text-primary-blue transition duration-150 relative group">
+                        Book Now
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-primary-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a>
+                    <a href="#about" class="text-gray-300 hover:text-primary-blue transition duration-150 relative group">
+                        Trainer
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-primary-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a>
+                    <a href="#services" class="text-gray-300 hover:text-primary-blue transition duration-150 relative group">
+                        Programs
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-primary-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a>
+                    <a href="#gallery" class="text-gray-300 hover:text-primary-blue transition duration-150 relative group">
+                        Gallery
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-primary-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a>
+                    <a href="#contact" class="text-gray-300 hover:text-primary-blue transition duration-150 relative group">
+                        Contact
+                        <span class="absolute left-0 bottom-0 w-full h-0.5 bg-primary-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-button" class="sm:hidden p-2 rounded-md text-gray-400 hover:text-white hover:bg-primary-blue focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-blue" aria-expanded="false">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden sm:hidden bg-dark-black pb-4" role="menu" aria-orientation="vertical">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <!-- Mobile menu links -->
+                <a href="#booking-widget" class="block px-3 py-2 rounded-lg text-base font-medium text-white hover:bg-gray-800 hover:text-primary-blue" role="menuitem">Book Now</a>
+                <a href="#about" class="block px-3 py-2 rounded-lg text-base font-medium text-white hover:bg-gray-800 hover:text-primary-blue" role="menuitem">Trainer</a>
+                <a href="#services" class="block px-3 py-2 rounded-lg text-base font-medium text-white hover:bg-gray-800 hover:text-primary-blue" role="menuitem">Programs</a>
+                <a href="#gallery" class="block px-3 py-2 rounded-lg text-base font-medium text-white hover:bg-gray-800 hover:text-primary-blue" role="menuitem">Gallery</a>
+                <a href="#contact" class="block px-3 py-2 rounded-lg text-base font-medium text-white hover:bg-gray-800 hover:text-primary-blue" role="menuitem">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-dark-black text-white pt-20 pb-28 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-12 lg:items-center">
+                    <div class="lg:col-span-6">
+                        <span class="text-xl font-bold text-accent-gold uppercase tracking-widest">
+                            The Only Way Is Up
+                        </span>
+                        <h1 class="mt-4 text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+                            POWERFUL.<span class="text-primary-blue"><br/>BEYOND.</span> MEASURE.
+                        </h1>
+                        <p class="mt-8 text-xl text-gray-300 max-w-xl">
+                            Elite, high-intensity basketball training designed to sharpen your skills, maximize athleticism, and forge a winning mindset.
+                        </p>
+                        
+                        <!-- PRIMARY BOOKING CALL TO ACTION (bright blue background) -->
+                        <div class="mt-12 sm:flex sm:justify-start">
+                            <a href="#booking-widget" class="group w-full sm:w-auto flex items-center justify-center px-10 py-4 border-2 border-transparent text-xl font-black rounded-xl shadow-2xl 
+                                bg-[#00B8FF] text-dark-black 
+                                hover:bg-dark-black hover:text-white hover:border-white 
+                                transition duration-300 uppercase tracking-widest transform hover:scale-[1.02] shadow-primary-blue/50">
+                                <i data-lucide="zap" class="w-6 h-6 mr-3 text-dark-black group-hover:text-white transition duration-300"></i>
+                                BOOK YOUR TRAINING NOW
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Image (rounded image corners match border radius) -->
+                    <div class="mt-16 lg:mt-0 lg:col-span-6 relative">
+                        <div class="rounded-2xl overflow-hidden shadow-2xl shadow-primary-blue/50 border-4 border-primary-blue/50">
+                            <img
+                                class="w-full h-full object-cover rounded-2xl"
+                                src="https://woocommerce-1364451-5958603.cloudwaysapps.com/wp-content/uploads/2025/11/cropped-IMG_4102-1.jpg"
+                                alt="PBM Elite basketball training session"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Booking Widget Section -->
+        <section id="booking-widget" class="py-16 sm:py-28 bg-gray-900 border-t border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-4xl font-extrabold text-primary-blue">Lock in Your Session</h2>
+                    <p class="mt-4 text-xl text-gray-400">View real-time availability and secure your training slot.</p>
+                </div>
+
+                <!-- BOOKING INTEGRATION AREA -->
+                <div class="mt-16 p-6 md:p-10 border-4 border-accent-gold/50 rounded-3xl bg-dark-black shadow-2xl min-h-96 flex items-center justify-center">
+                    <div class="text-center p-8 bg-gray-800 rounded-xl shadow-lg max-w-lg w-full border border-gray-700">
+                        <i data-lucide="calendar-check" class="w-14 h-14 mx-auto text-accent-gold mb-6"></i>
+                        <h3 class="text-3xl font-bold mb-3 text-white">Booking Widget Placeholder</h3>
+                        <p class="text-gray-400 mb-6">
+                            **PASTE YOUR BOOKING WIDGET CODE HERE**
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            This block will be replaced by your live, interactive scheduling calendar (e.g., Calendly embed).
+                        </p>
+                        <a href="#" class="mt-6 inline-block px-8 py-3 border border-primary-blue text-lg font-semibold rounded-lg text-primary-blue hover:bg-primary-blue hover:text-dark-black transition duration-300">
+                            View Services &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Trainer Section -->
+        <section id="about" class="py-16 sm:py-28 bg-dark-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                    <!-- Bio Content -->
+                    <div class="space-y-6 order-2 lg:order-1">
+                        <span class="text-xl font-bold text-accent-gold uppercase tracking-wider">The Difference Maker</span>
+                        <h2 class="text-4xl sm:text-5xl font-extrabold text-white">
+                            MEET COACH <span class="text-primary-blue">KHI</span>
+                        </h2>
+                        <p class="text-lg text-gray-300 border-l-4 border-primary-blue pl-4 pt-1 pb-1">
+                            "My job isn't to make you practice. My job is to make you better. We train for results."
+                        </p>
+                        <p class="text-lg text-gray-400">
+                            I'm Khi'el Alexander, also known as Coach Khi — a former collegiate guard at Concordia University who turned a self-driven basketball journey into a full-time mission to develop players. Since 2020, I've been focused on building complete, confident hoopers through structured, game-realistic training.
+                        </p>
+                        <p class="text-lg text-gray-400">
+                            At PBM Elite (Powerful Beyond Measure), I work with players of all ages and positions, emphasizing skill refinement, on-court IQ, athletic performance, and a winning mindset that carries off the floor as well.
+                        </p>
+                        <ul class="space-y-4 text-gray-300">
+                            <li class="flex items-start">
+                                <i data-lucide="medal" class="flex-shrink-0 w-6 h-6 mr-3 text-accent-gold mt-1"></i>
+                                Walk-on collegiate experience at Concordia University, shaped by diverse coaching styles and advanced training methods.
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="target" class="flex-shrink-0 w-6 h-6 mr-3 text-accent-gold mt-1"></i>
+                                Proven track record training AAU athletes and players of all levels, with a focus on comprehensive skill development and game impact.
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="zap" class="flex-shrink-0 w-6 h-6 mr-3 text-accent-gold mt-1"></i>
+                                Training built to unlock your full potential — elevating confidence, discipline, and Powerful Beyond Measure performance.
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Trainer Photo (updated) -->
+                    <div class="mb-10 lg:mb-0 order-1 lg:order-2">
+                        <img class="rounded-3xl shadow-2xl shadow-primary-blue/30 w-full h-auto object-cover transform rotate-[-2deg] transition duration-500 hover:rotate-0 border-4 border-gray-700" 
+                            src="https://woocommerce-1364451-5958603.cloudwaysapps.com/wp-content/uploads/2025/11/Front-page-e1726237382484.jpg" 
+                            alt="Coach Khi - PBM Elite">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section id="services" class="py-16 sm:py-28 bg-gray-900 border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-xl font-bold text-primary-blue uppercase tracking-wider">Our Methodology</span>
+                    <h2 class="text-5xl font-extrabold mt-3 text-white">CHOOSE YOUR PROGRAM</h2>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <!-- Service 1: Orientation -->
+                    <div class="service-card-bg p-8 rounded-2xl shadow-xl hover:shadow-primary-blue/50 transition duration-300 transform hover:-translate-y-2">
+                        <i data-lucide="clipboard-list" class="w-12 h-12 text-accent-gold mb-6"></i>
+                        <h3 class="text-3xl font-bold mb-3 text-white">ORIENTATION</h3>
+                        <p class="text-gray-400 mb-6">
+                            A focused assessment session to gauge your current skill level, identify strengths and gaps, and build a fundamental roadmap to start your development the right way.
+                        </p>
+                        <p class="text-2xl font-black text-primary-blue">$70 <span class="text-lg font-normal text-gray-500">/ Player</span></p>
+                        <a href="#booking-widget" class="mt-6 inline-block bg-primary-blue text-dark-black px-6 py-2 rounded-full font-bold hover:bg-sky-600 transition">Book Now &rarr;</a>
+                    </div>
+
+                    <!-- Service 2: Individual Skills -->
+                    <div class="service-card-bg p-8 rounded-2xl shadow-xl hover:shadow-primary-blue/50 transition duration-300 transform hover:-translate-y-2">
+                        <i data-lucide="user-plus" class="w-12 h-12 text-accent-gold mb-6"></i>
+                        <h3 class="text-3xl font-bold mb-3 text-white">THE 1-ON-1 INTENSIVE</h3>
+                        <p class="text-gray-400 mb-6">
+                            60 minutes of hyper-focused training, film breakdown, and targeted homework. This is where flaws get fixed and strengths become weapons.
+                        </p>
+                        <p class="text-2xl font-black text-primary-blue">$60 <span class="text-lg font-normal text-gray-500">/ Session</span></p>
+                        <a href="#booking-widget" class="mt-6 inline-block bg-primary-blue text-dark-black px-6 py-2 rounded-full font-bold hover:bg-sky-600 transition">Book Now &rarr;</a>
+                    </div>
+                    
+                    <!-- Service 3: Group Training -->
+                    <div class="service-card-bg p-8 rounded-2xl shadow-xl hover:shadow-primary-blue/50 transition duration-300 transform hover:-translate-y-2">
+                        <i data-lucide="users-2" class="w-12 h-12 text-accent-gold mb-6"></i>
+                        <h3 class="text-3xl font-bold mb-3 text-white">SMALL GROUP COMPETITIVE</h3>
+                        <p class="text-gray-400 mb-6">
+                            Train with like-minded hoopers. Clean up spacing, reads, help-side, and communication while competing at game speed.
+                        </p>
+                        <p class="text-2xl font-black text-primary-blue">$40 <span class="text-lg font-normal text-gray-500">/ Player</span></p>
+                        <a href="#booking-widget" class="mt-6 inline-block bg-primary-blue text-dark-black px-6 py-2 rounded-full font-bold hover:bg-sky-600 transition">Book Now &rarr;</a>
+                    </div>
+
+                    <!-- Service 4: Athletic Performance -->
+                    <div class="service-card-bg p-8 rounded-2xl shadow-xl hover:shadow-primary-blue/50 transition duration-300 transform hover:-translate-y-2">
+                        <i data-lucide="trending-up" class="w-12 h-12 text-accent-gold mb-6"></i>
+                        <h3 class="text-3xl font-bold mb-3 text-white">VERTICAL & AGILITY LAB</h3>
+                        <p class="text-gray-400 mb-6">
+                            Explosive first step. Stronger finishes. Faster slides. A performance-focused program built to add inches and speed safely.
+                        </p>
+                        <p class="text-2xl font-black text-primary-blue">Inquire <span class="text-lg font-normal text-gray-500">/ Program</span></p>
+                        <a href="#contact" class="mt-6 inline-block bg-primary-blue text-dark-black px-6 py-2 rounded-full font-bold hover:bg-sky-600 transition">Book Now &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video and Gallery Section -->
+        <section id="gallery" class="py-16 sm:py-28 bg-dark-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-xl font-bold text-accent-gold uppercase tracking-wider">Proof is in the Performance</span>
+                    <h2 class="text-5xl font-extrabold text-white mt-3">WORKOUT GALLERY</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- Main Feature Video -->
+                    <div class="rounded-2xl overflow-hidden shadow-2xl shadow-gray-700 border-4 border-primary-blue/30">
+                        <video controls playsinline class="w-full h-full object-cover">
+                            <source src="https://woocommerce-1364451-5958603.cloudwaysapps.com/wp-content/uploads/2025/11/lv_0_20240125074551.mov">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    
+                    <!-- Additional Videos Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Video 1 -->
+                        <div class="rounded-lg overflow-hidden shadow-lg border-2 border-primary-blue/30">
+                            <video controls playsinline class="w-full h-full object-cover">
+                                <source src="https://woocommerce-1364451-5958603.cloudwaysapps.com/wp-content/uploads/2025/11/IMG_5198-1.mov">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <!-- Video 2 -->
+                        <div class="rounded-lg overflow-hidden shadow-lg border-2 border-primary-blue/30">
+                            <video controls playsinline class="w-full h-full object-cover">
+                                <source src="https://woocommerce-1364451-5958603.cloudwaysapps.com/wp-content/uploads/2025/11/IMG_5718.mov">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <!-- Video 3 -->
+                        <div class="rounded-lg overflow-hidden shadow-lg border-2 border-primary-blue/30">
+                            <video controls playsinline class="w-full h-full object-cover">
+                                <source src="https://woocommerce-1364451-5958603.cloudwaysapps.com/wp-content/uploads/2025/11/EJ.mov">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <!-- Video 4 -->
+                        <div class="rounded-lg overflow-hidden shadow-lg border-2 border-primary-blue/30">
+                            <video controls playsinline class="w-full h-full object-cover">
+                                <source src="https://woocommerce-1364451-5958603.cloudwaysapps.com/wp-content/uploads/2025/11/IMG_5790.mov">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <!-- Video 5 -->
+                        <div class="rounded-lg overflow-hidden shadow-lg border-2 border-primary-blue/30">
+                            <video controls playsinline class="w-full h-full object-cover">
+                                <source src="https://woocommerce-1364451-5958603.cloudwaysapps.com/wp-content/uploads/2025/11/IMG_0703.mov">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <!-- Video 6 -->
+                        <div class="rounded-lg overflow-hidden shadow-lg border-2 border-primary-blue/30">
+                            <video controls playsinline class="w-full h-full object-cover">
+                                <source src="https://woocommerce-1364451-5958603.cloudwaysapps.com/wp-content/uploads/2025/11/IMG_0594.mov">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Footer CTA -->
+        <section class="py-20 bg-primary-blue">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl sm:text-5xl font-black text-dark-black tracking-tighter">
+                    READY TO COMPETE?
+                </h2>
+                <p class="mt-4 text-xl font-medium text-dark-black/80">
+                    Your next level starts now. Secure your first session and join PBM Elite.
+                </p>
+                <a href="#booking-widget" class="mt-8 inline-flex items-center justify-center px-12 py-4 border border-transparent text-xl font-black rounded-full shadow-2xl text-white bg-dark-black hover:bg-gray-700 transition duration-300 uppercase tracking-widest transform hover:scale-[1.05]">
+                    <i data-lucide="arrow-right" class="w-6 h-6 mr-3"></i>
+                    BOOK NOW
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 sm:py-24 bg-dark-black">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold text-white">DIRECT CONTACT</h2>
+                    <p class="mt-4 text-xl text-gray-400">Questions about custom programs or next steps? Reach out directly.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div class="space-y-6 p-8 rounded-2xl bg-gray-900 shadow-xl border-t-4 border-accent-gold/50">
+                        <h3 class="text-2xl font-bold text-primary-blue">Connect with Coach Khi</h3>
+                        <div class="flex items-center space-x-4">
+                            <i data-lucide="mail" class="w-7 h-7 text-accent-gold"></i>
+                            <p class="text-lg">Email: <a href="mailto:trainer@proformance.com" class="hover:text-primary-blue transition">trainer@proformance.com</a></p>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i data-lucide="phone" class="w-7 h-7 text-accent-gold"></i>
+                            <p class="text-lg">Phone: <a href="tel:+15551234567" class="hover:text-primary-blue transition">(555) 123-4567</a></p>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <i data-lucide="map-pin" class="w-7 h-7 text-accent-gold"></i>
+                            <p class="text-lg">Location: <span class="text-gray-300">[Your City / Gym Name Here]</span></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Simple Contact Form (Placeholder) -->
+                    <div class="p-8 rounded-2xl bg-gray-900 shadow-xl border-t-4 border-accent-gold/50">
+                        <h3 class="text-2xl font-bold text-primary-blue mb-6">Send a Quick Message</h3>
+                        <form action="#" method="POST" class="space-y-4">
+                            <div>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required
+                                    class="w-full px-4 py-3 rounded-lg bg-gray-800 border-gray-700 focus:ring-primary-blue focus:border-primary-blue text-white placeholder-gray-500">
+                            </div>
+                            <div>
+                                <input type="email" id="email" name="email" placeholder="Your Email" required
+                                    class="w-full px-4 py-3 rounded-lg bg-gray-800 border-gray-700 focus:ring-primary-blue focus:border-primary-blue text-white placeholder-gray-500">
+                            </div>
+                            <div>
+                                <textarea id="message" name="message" rows="4" placeholder="Your Message" required
+                                    class="w-full px-4 py-3 rounded-lg bg-gray-800 border-gray-700 focus:ring-primary-blue focus:border-primary-blue text-white placeholder-gray-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-lg shadow-sm text-dark-black bg-primary-blue hover:bg-sky-600 transition duration-300 uppercase">
+                                SUBMIT INQUIRY
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-primary-blue/50">
+        <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+            <div class="flex justify-center space-x-6 mb-6">
+                <!-- Social Media Icons Placeholder -->
+                <a href="#" class="text-gray-400 hover:text-primary-blue transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                <a href="#" class="text-gray-400 hover:text-primary-blue transition"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+                <a href="#" class="text-gray-400 hover:text-primary-blue transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+            </div>
+            <p class="text-center text-base text-gray-400">
+                &copy; 2025 PBM Elite. All rights reserved. | Built for speed on AWS Amplify.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Icon rendering -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle Logic
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Hide mobile menu after clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+</html>
